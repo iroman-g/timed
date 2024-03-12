@@ -90,6 +90,32 @@ resource "yandex_compute_instance" "platform-db" {
   }
 }
 ```
+кусок из vms_platform.tf
+```
+variable "db_vpc_name" {
+  type        = string
+  default     = "develop-db"
+  description = "VPC network & subnet name"
+}
+
+variable "db_subnet_name" {
+  type    = string
+  default = "develop-db"
+}
+
+variable "db_default_zone" {
+  type        = string
+  default     = "ru-central1-b"
+  description = "что-то понаписал"
+}
+variable "db_default_cidr" {
+  type        = list(string)
+  default     = ["10.0.10.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+```
+
+
 
 error:
 ```
